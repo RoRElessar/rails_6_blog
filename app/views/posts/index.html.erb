@@ -1,0 +1,12 @@
+<div class="content">
+  <% @posts.each do |post| %>
+    <% if post.published? %>
+      <div class="post">
+        <p class="title"><%= post.title %></p>
+        <div class="post-content"><%= post.content %></div>
+        <%= image_tag post.image if post.image %>
+      </div>
+      <hr>
+    <% end %>
+  <% end %>
+</div>

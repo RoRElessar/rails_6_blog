@@ -1,0 +1,5 @@
+<% if @post.published %>
+  <p><%= @post.title %></p>
+  <p><%= @post.content %></p>
+  <p><%= image_tag @post.image %></p>
+<% end %>

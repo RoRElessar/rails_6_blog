@@ -14,8 +14,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.save
-    redirect_to @post, notice: 'A post was successfully created.'
+    if @post.save
+      redirect_to @post, notice: 'A post was successfully created.'
+    else
+      render :new
+    end
   end
 
   def destroy; end
